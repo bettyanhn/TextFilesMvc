@@ -16,7 +16,17 @@ public class FileController : Controller
   public IActionResult Index()
   {
     var path = Path.Combine(_env.ContentRootPath, "TextFiles");
-    ViewBag.Files = Directory.GetFiles(path);
+    string[] files = Directory.GetFiles(path);
+    ViewBag.FileName = files.Select(f => Path.GetFileNameWithoutExtension(f)).ToArray();
+    //without extention
+
+    return View();
+  }
+  
+  public IActionResult Content(string id)
+  {
+    var path = Path.Combine(_env.ContentRootPath, "TextFiles", id + ".txt");
+    ViewBag.Content = System.IO.File.ReadAllText(path);
 
     return View();
   }
