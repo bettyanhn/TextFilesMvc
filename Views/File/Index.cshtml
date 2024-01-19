@@ -1,0 +1,12 @@
+@{
+    ViewData["Title"] = "Files Page";
+    var files = ViewBag.Files as string[];
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewData["Title"]</h1>
+    @foreach (var file in files!)
+    {
+        <p>@file</p>
+    }
+</div>
