@@ -1,6 +1,5 @@
 @{
     ViewData["Title"] = "Files Page";
-    @* var files = ViewBag.Files as string[]; *@
     var files = ViewBag.FileName as string[];
 }
 
@@ -10,7 +9,7 @@
     {
         <p>
           <a asp-area="" asp-controller="File"
-          asp-action="Content"
+          asp-action="Contents"
           asp-route-id="@file"
           >@file</a>
         </p>

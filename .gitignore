@@ -36,7 +36,6 @@ bld/
 [Ll]ogs/
 
 #my additions
-dist
 appsettings.json
 appsettings.Development.json
 
